@@ -1,0 +1,551 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: OpenSans, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;   
+}
+
+.header {
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;    
+    background-color: #000000;    
+    position:relative;
+    padding-top: 28px;
+    padding-bottom: 130px;
+    
+}
+
+.header::after {
+    content: "";
+    background-color: #000000;
+    opacity: 0.6;
+
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;    
+}
+
+.cover_opacity {
+   position: relative;
+   z-index: 2;
+}
+
+.header_navigation {
+    margin-top: 50px;
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;    
+    margin: 0 auto;
+    justify-content: space-between;  
+}
+
+.header_logo {
+    width: 179px;
+    margin-left: 3px;   
+}
+
+.header_menu {
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: regular;
+    color:#ffffff;   
+}
+
+.header_menu_item {
+    list-style-type: none; 
+    justify-content: space-between;      
+    margin-left: 35px;
+
+}
+
+.link {
+    color:#ffffff;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    display: block;
+    margin-top: 102px;
+    text-align: center;
+
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1.6;
+    color:#ffffff;    
+}
+
+.main_container{
+    width: 1200px;
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    
+    /* outline: green solid 1px; */
+}
+
+.main_content_post {
+    width: 778px;    
+    
+    display: flex;
+    align-items: flex-start;
+
+    /* outline: red solid 1px; */
+}
+
+.main_content_post:nth-child(n+2){
+    margin-top: 60px;
+}
+
+.main_content_img_container {
+    min-width:380px;
+    width: 380px;
+    min-height: 293px;
+    margin-right : 30px;
+    background-image: url(https://www.stoneunion.ru/pictures/product/big/9816_big.jpeg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main_content_img {
+    display: block;
+    
+    width: 380px;
+    
+}
+
+.main_content_tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+}
+
+.main_content_tag {
+    list-style-type: none; 
+    justify-content: space-between;
+    margin-right: 20px; 
+    margin-top: -5px;    
+}
+
+.main_content_link {
+    font-size: 14px;
+    color: #b59f5b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main_content_link:hover {
+    text-decoration: underline;
+}
+
+.main_content_header {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #0f0d0e;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main_content_header:hover {
+    color: #b59f5b;
+}
+
+.main_content_date {
+    display: inline-block;
+    margin-top: 30px;
+
+    font-size: 12px;
+    color: #888888;
+    font-weight: regular;
+    margin-bottom: 45px;
+}
+
+.main_content_autor {
+    display: inline-block;
+    margin-left: 10px;
+
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.main_content_text{
+    font-size: 15px;
+    line-height: 1.45;
+    color: #0f0d0e;
+    font-weight: regular;
+}
+
+.main_content_text p:nth-child(n+2){
+    margin-top: 15px;
+}
+
+
+.aside_content {
+    width: 270px;
+}
+
+
+.new_posts_header {
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    color:#0f0d0e; 
+    margin-top: -5px;
+    text-align: center;
+}
+
+.new_posts_header:after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65px;
+    height: 3px;
+    background-color: #b59f5b;
+    opacity: 0.4;
+    
+}
+
+.new_post {
+    display: flex;
+    margin-top: 32px;
+}
+
+.new_posts > .new_post:nth-child(n+3){
+    margin-top:15px;
+}
+
+
+.new_post_img {
+    width: 70px;
+}
+
+.new_post_img_container {
+    margin-right: 20px;
+    min-width:70px;
+    width: 70px;
+    min-height: 70px;
+    background-image: url(https://www.stoneunion.ru/pictures/product/big/9816_big.jpeg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.new_post_date {
+    display: block;
+    margin-top: -5px;
+
+    font-size: 12px;
+    font-weight: regular;
+    color:#000000; 
+    opacity: 0.54;
+}
+
+.new_post_text{
+    display: block;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color:#000000; 
+    text-transform: uppercase;
+}
+
+.new_post_text:hover {
+    color: #b59f5b;
+}
+
+.search {
+    margin-top: 60px;
+    
+}
+
+.search {
+    display: flex;
+}
+
+.search_input {    
+    height: 46px;
+    width: 223px;
+    background-color: #f4f7f6;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    
+    font-size: 13px;
+    font-weight: regular;
+    color:#b2b4b3; 
+}
+
+.search_button {    
+    width: 46px;
+    height: 46px;
+    background-color: #b59f5b;
+    border:none;
+
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-size: 18px;
+    background-position: center;
+}
+
+.search_button:hover {
+    background-color: #323232;
+}
+
+.search_input:focus {
+    outline: #b59f5b 1px solid;
+    outline-offset: -1px;
+}
+
+.search_input:focus-visible {
+    outline: #b59f5b 1px solid;
+    outline-offset: -1px;
+}
+
+.subscribe {
+    margin-top: 69px;
+}
+
+.subscribe_form {
+    margin-top: 20px;
+}
+
+.subscribe_input {
+    height: 46px;
+    width: 271px;
+    background-color: #f4f7f6;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    
+    font-size: 13px;
+    font-weight: regular;
+    color:#b2b4b3; 
+}
+
+.subscribe_input:focus-visible{
+    outline: #b59f5b 1px solid;
+    outline-offset: -1px;
+}
+
+.subscribe_input:focus {
+    outline: #b59f5b 1px solid;
+    outline-offset: -1px;
+}
+
+.subscribe_button {
+    margin-top: 24px;
+
+    width: 271px;
+    height: 46px;
+    background-color: #b59f5b;
+    border:none;   
+
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase; 
+}
+
+.subscribe_button:hover {
+    background-color: #323232;
+}
+
+.tag {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:18px;
+}
+.tags {
+    margin-top: 65px;
+
+}
+
+.tag_item {
+    display: block;    
+    list-style-type: none; 
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right:14px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: 3px solid #ededed;    
+}
+
+.tag_link{
+    font-size: 12px;
+    font-weight: bold;
+    color: #0f0d0e;
+    text-transform: uppercase;
+}           
+
+.tag_item:hover {
+    border: 3px solid #b59f5b;  
+}
+
+.categories {
+    margin-top: 68px;
+}
+
+.category_item {
+    display: flex;
+    list-style-type: none;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+    margin-top: 20px;
+
+}
+
+.category_item_link{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.category_item_link:hover{
+    color: #b59f5b;
+}
+
+.teme_counter {    
+    display: block;
+    margin-top:-3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #b59f5b;
+    margin-left: 5px;    
+}
+
+.footer {
+    width: 1200px;
+    display: block;
+    background-color: #f4f7f6;
+    margin-left: auto;
+    margin-right: auto;  
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer_social {
+    display: flex;
+    justify-content: center;
+   
+    
+
+}
+
+.social_icon {
+    display: block;
+    width: 25px;
+    height: 25px;    
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.footer_social_item:nth-child(n+2) {
+    margin-left: 23px;
+}
+
+.footer {
+    margin-top: 65px;
+}
+
+.footer_social_item {
+    display: block;
+    
+}
+
+.social_icon__twitter {
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.social_icon__pinterest{
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.social_icon__facebook{
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.social_icon__instagram {
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.social_icon__tumblr {
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.copyright {
+    display: block;
+    text-align: center;
+
+    font-size: 12px;
+    color: #999999;
+
+    margin-top: 70px;
+    margin-bottom: 40px;
+
+}
