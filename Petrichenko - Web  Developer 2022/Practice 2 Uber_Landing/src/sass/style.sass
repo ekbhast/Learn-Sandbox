@@ -9,7 +9,17 @@ $color_rose: #FF5656
 		background-image: none
 		background-color: $color_blue
 
-	
+@mixin list_icon
+	&:before
+		content: ''
+		display: block
+		width: 21px
+		height: 20px
+		position: absolute
+		left: -32px
+		top: 3px
+		
+
 
 
 header
@@ -299,7 +309,25 @@ nav
 	&_list
 		list-style-type: none
 		padding-left: 50px
-		font-weight: 300
-		font-style: 17px
-		line-height: 24px
 		margin-top: 22px
+		li
+			position: relative
+			font-weight: 300
+			font-size: 17px
+			line-height: 24px
+			margin-bottom: 10px
+			@include list_icon
+			&:before
+				background: url('../icons/rectangle.png') center (center / cover) no-repeat
+				
+	.warning
+		.require_title
+			color: $color_rose
+		.require_list
+			li
+				&:before
+					background: url('../icons/rectangle_red.png') center (center / cover) no-repeat	
+				
+				
+			
+		
