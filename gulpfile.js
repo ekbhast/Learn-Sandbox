@@ -9,25 +9,25 @@ gulp.task('server', function() {
 
     browserSync({
         server: {
-            baseDir: "Petrichenko_Practice_2_Uber_Landing/src"
+            baseDir: "Petrichenko_Practice_3_Pulsemeter/src"
         }
     });
 
-    gulp.watch("Petrichenko_Practice_2_Uber_Landing/src/*.html").on('change', browserSync.reload);
+    gulp.watch("Petrichenko_Practice_3_Pulsemeter/src/*.html").on('change', browserSync.reload); 
 });
 
 gulp.task('styles', function() {
-    return gulp.src("Petrichenko_Practice_2_Uber_Landing/src/sass/**/*.+(scss|sass)")
+    return gulp.src("Petrichenko_Practice_3_Pulsemeter/src/sass/**/*.+(scss|sass)")
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("Petrichenko_Practice_2_Uber_Landing/src/css"))
+        .pipe(gulp.dest("Petrichenko_Practice_3_Pulsemeter/src/css"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function() {
-    gulp.watch("Petrichenko_Practice_2_Uber_Landing/src/sass/**/*.+(scss|sass)", gulp.parallel('styles'));
+    gulp.watch("Petrichenko_Practice_3_Pulsemeter/src/sass/**/*.+(scss|sass)", gulp.parallel('styles'));
 })
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles'));
