@@ -1,4 +1,19 @@
-.container {
+@import 'base/fonts';
+@import 'base/variables';
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/buttons';
+
+
+*{
+    font-family: 'Museo Sans Cyrl 500', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container{
     max-width: 950px;
     margin: 0 auto;
 }
