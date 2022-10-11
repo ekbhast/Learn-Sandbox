@@ -99,3 +99,9 @@
 	font-weight: bold;
 	font-style: italic;
 }
+
+@font-face {
+	font-family: 'MuseoModerno' ;
+	src: local('../../fonts/MuseoModerno/MuseoModerno-Light'),
+	url('../../fonts/MuseoModerno/MuseoModerno-Light.ttf') format('truetype');
+}
