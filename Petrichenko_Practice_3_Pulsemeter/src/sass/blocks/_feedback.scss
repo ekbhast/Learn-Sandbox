@@ -1,0 +1,33 @@
+.feedback {
+    &-item{
+        display: flex;
+        margin-top: 60px;
+        &__img {
+            width: 116px;
+            height: 116px;
+            margin-right: 61px;
+        }
+        &__descr{
+            h2 {
+                margin-bottom: 0;
+                font-weight: 700;
+                font-size: 18px;
+                color: #0D0D0D;
+            }
+        }
+        &__count{
+            font-weight: 500;
+            font-size: 14px;
+            color: #646464;
+        }
+
+        p{
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: #0D0D0D;
+        }
+        
+    }
+
+}
