@@ -79,4 +79,37 @@ $(document).ready(function(){
     });
   });
 
+function validateForms (form){
+  $(form).validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      phone: "required",
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    messages:{
+      name: {
+        required: "Пожалуйста, введите свое имя",
+        minlength: jQuery.validator.format("Имя должно содержать больше {0} симвалов")
+      },
+      phone: "Пожалуйста, введите телефон",
+      email: {
+        required: "Пожалуйста, введите свою почту",
+        email: "email адреса должен быть формата name@example.com"
+      }
+    }
+  });
+};
+
+validateForms('#consultation-form');
+validateForms('#consultation form');
+validateForms('#order form');
+
+$('input[name=phone]').mask('+7(999) 999-99-99');
+
 });
