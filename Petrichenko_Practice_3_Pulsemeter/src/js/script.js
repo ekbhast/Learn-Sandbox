@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  //carousel
   const slider = tns({
     container: '.carousel__inner',
     items: 1,
@@ -9,20 +11,36 @@ $(document).ready(function(){
   });
 
   document.querySelector('.prev').addEventListener ('click',function () {
-      slider.goTo('prev');} );
-      document.querySelector('.next').addEventListener ('click',function () {
-          slider.goTo('next');} );
+    slider.goTo('prev');} );//Ищем элемент с классом .prev и вешаем на него слушаетль, при клике выполняем функцию GoTo (далее)
+  document.querySelector('.next').addEventListener ('click',function () {
+    slider.goTo('next');} );// аналогично
 
-          document.querySelector('.prev').addEventListener ('click',function () {
-            slider.goTo('prev');} );
-            document.querySelector('.next').addEventListener ('click',function () {
-                slider.goTo('next');} );
-      
+//tabs тут мы меняем активные категории каталога.
+//получаем со страницы ul список с классом catalog tabs
+//при клике на не класс active (соотвественно который не активный)
+//тогда запускается функция для этого элемент (this)
+//которая добавляет класс активности а у всех остальных элеменов на этой вложенности
+//его удаляет то есть у всех соседних табов
+//далее мы находим ближайший элемент с классом container в нашем случае это обертка всего блока с табами.
+// можно конечно было обернуть все ще раз. 
+//далее в этой оберке мы находим все жлементы с классом catalog_content и удаляем класс активности
+//команда eq($(this).index) получает номер тот номер элемента на который мы нажали.
+//когда мы нажали например на второй номер, то второму номеру мы прописываем активность.
   $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
     $(this)
       .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
       .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
   });
+
+
+// Создаем функцию переключения классов по сути
+// функция такая-то с таким то параметром
+// ищем элемент с параметром, перебираем по номреам
+// для этого элемента при клике даелаем еще оджну функцию
+// отменяем действия брайзера по умолчанию
+// далее находим наш нужный элемент и оглим его класс на нужный
+// или если у него класс нужный тоглим на первоначанльный 
+// вот такая загагулина
 
   function toggleSlide (item) {
     $(item).each(function(i) {
@@ -33,12 +51,12 @@ $(document).ready(function(){
       })
     })
   };
-
+// тупо вызов функции с нужным классом
   toggleSlide('.catalog-item__link');
   toggleSlide('.catalog-item__back');
 
   //modal 
-
+//  модалки появляютя при клике на кнопку у которой есть нужный дата атрибут
   $('[data-modal=consultation]').on('click',function(){
     $('.overlay, #consultation').fadeIn('slow');
   });
@@ -50,7 +68,10 @@ $(document).ready(function(){
   });
 
   //buy button
-
+// Находим все кнопки и вешаем на них функцию 
+// при клике 
+// текст из дискришена карточки подтсавляем в текст субтайтла модалки
+// и потом показываем модалку
   $('.button_mini').each(function(i) {
     $(this).on('click', function() {
       $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
