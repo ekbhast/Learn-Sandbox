@@ -79,37 +79,60 @@ $(document).ready(function(){
     });
   });
 
-function validateForms (form){
-  $(form).validate({
-    rules: {
-      name: {
-        required: true,
-        minlength: 2
+  function validateForms (form){
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: "required",
+        email: {
+          required: true,
+          email: true
+        }
       },
-      phone: "required",
-      email: {
-        required: true,
-        email: true
+      messages:{
+        name: {
+          required: "Пожалуйста, введите свое имя",
+          minlength: jQuery.validator.format("Имя должно содержать больше {0} симвалов")
+        },
+        phone: "Пожалуйста, введите телефон",
+        email: {
+          required: "Пожалуйста, введите свою почту",
+          email: "email адреса должен быть формата name@example.com"
+        }
       }
-    },
-    messages:{
-      name: {
-        required: "Пожалуйста, введите свое имя",
-        minlength: jQuery.validator.format("Имя должно содержать больше {0} симвалов")
-      },
-      phone: "Пожалуйста, введите телефон",
-      email: {
-        required: "Пожалуйста, введите свою почту",
-        email: "email адреса должен быть формата name@example.com"
-      }
+    });
+  };
+
+  validateForms('#consultation-form');
+  validateForms('#consultation form');
+  validateForms('#order form');
+
+  $('input[name=phone]').mask('+7(999) 999-99-99');
+
+  $('form').submit(function(){ //ищем на стрице все формы, по сабытию сабмит (отпрака формы), выполняем функцию.
+    e.preventDefault(); //тут мы отменяем стандартное поведение браузера при отправке формы, а именно перезагрузку страницы.
+
+
+    //проверка прошла ли форма валидацию. Если этот обект не прошел валидацию то просто прекращаем функцию.
+    if (!$(this).valid()){
+      return;
     }
+
+    $.ajax({ //методом ajax мы отрпавляем данные на сервер. Вместо отключенного стандартног поведения.
+      type: "POST", // методом POST мы отправляем данные на серве
+      url: "mailer/smart.php", // каким образом мы отправляем данные, в данном случае мейлером.
+      data: $(this).serialize() // какие данне и вкаком формате то есть данные и опять объект
+    }).done(function(){
+      $(this).find("input").val(""); // в этом объекте найти инпуты и в их валуе втсавить пустое значение
+
+
+
+      $('form').trigger('reset'); //перезагружаем формы.
+    });
+    return false;
   });
-};
-
-validateForms('#consultation-form');
-validateForms('#consultation form');
-validateForms('#order form');
-
-$('input[name=phone]').mask('+7(999) 999-99-99');
 
 });
