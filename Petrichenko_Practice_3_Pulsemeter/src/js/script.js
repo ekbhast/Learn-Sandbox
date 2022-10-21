@@ -134,4 +134,22 @@ $(document).ready(function(){
     return false;
   });
 
+//smooth scrolll and pageup
+
+$(window).scroll(function() {
+  if ($(this).scrollTop()>1600) {
+    $('.pageup').fadeIn();
+  }else{
+    $('.pageup').fadeOut();
+  }
+});
+
+$("a[href^='#']").click(function(){ //получаем все ссылки с атрибутом href который в свою очередь начинается # и при клике на него запускаем функцию
+  const _href = $(this).attr("href"); // в переменную кладем собственно - то что нашли с тем атрибутом который нашли конкретно этого элемента
+  $("html, body").animate({scrollTop: $(_href).offset().top+"px"}); // тут собственно сама анимация. Мы долистываем до того элемента на который ведет эта ссылка
+  return false; 
+});
+
+new WOW().init();
+
 });

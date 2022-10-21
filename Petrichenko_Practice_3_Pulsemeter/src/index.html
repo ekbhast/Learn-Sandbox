@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/font.css">
     <!-- <link rel="stylesheet" href="css/slick.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a class="header__logo">
@@ -75,7 +76,7 @@
                     переплыли Босфор, готовятся к соревнованиям по триатлону!
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/heart.png" alt="heart">
+                    <img src="icons/heart.png" alt="heart" class="advantages__icon_animated">
                     <div class="advantages__item-header">Заботимся о здоровье</div>
                     Мы работаем для того, <br> чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость
                     Вам и Вашим близким!
@@ -391,7 +392,7 @@
         <div class="container">
             <h2 class="title">отзывы клиентов</h2>
 
-            <div class="feedback-item">
+            <div class="feedback-item wow animate__fadeInUp animate__animated" data-wow-duration="1s" data-wow-delay="0.5s">
 
                 <img class="feedback-item__img" src="img/fb_photo_1.png" alt="photo client">
                 <div class="feedback-item__descr">
@@ -410,7 +411,7 @@
 
             </div>
 
-            <div class="feedback-item">
+            <div class="feedback-item wow animate__fadeInUp animate__animated" data-wow-duration="1s" data-wow-delay="0.5s">
 
                 <img class="feedback-item__img" src="img/fb_photo_2.png" alt="photo client">
                 <div class="feedback-item__descr">
@@ -429,7 +430,7 @@
 
             </div>
 
-            <div class="feedback-item">
+            <div class="feedback-item wow animate__fadeInUp animate__animated" data-wow-duration="1s" data-wow-delay="0.5s">
 
                 <img class="feedback-item__img" src="img/fb_photo_3.png" alt="photo client">
                 <div class="feedback-item__descr">
@@ -503,7 +504,7 @@
             <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
     </div>
-    <a href="#" class="pageup">
+    <a href="#up" class="pageup">
         <img src="icons/circle-chevron-up-solid.svg" alt="up" > 
     </a>
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -513,6 +514,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 
 </body>
