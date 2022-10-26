@@ -1,5 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+#practicle lessons
+/75 losson
+
 # dependencies
 /node_modules
 
