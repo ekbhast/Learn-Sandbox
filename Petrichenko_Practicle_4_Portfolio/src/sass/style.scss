@@ -1,29 +1,22 @@
 @import 'libs/bootstrap-reboot.min';
 @import 'base/fonts';
-@import 'base/mixins';
 @import 'base/variables';
+@import 'base/mixins';
+
 
 * {
     font-family: 'Poppins', sans-serif;
+    color: #000;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    position: relative;
+    width: 1140px;
+    margin: 0 auto;
 }
 
-.circle {
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    background-color: #ffa501;
-    border-radius: 100%;
-    z-index: -1;
-}
-
-.descr{
-    padding: 7px 13px;
-    font-weight: 700;
-    font-size: 15px;
-}
+@import 'blocks/promo';
+@import 'blocks/title';
+@import 'blocks/button';
+@import 'blocks/sidepanel';
