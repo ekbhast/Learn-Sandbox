@@ -1,13 +1,34 @@
 @mixin before_circle {
-    &:before {
-        content: '';
-        width: 36px;
-        height: 36px;
-        background: $main-color;
+    position: relative;
+    padding-left: 10px;
+    z-index: 2;
+        &:before {
+            content: '';
+            width: 36px;
+            height: 36px;
+            background: $main-color;
+            position: absolute;
+            border-radius: 100%;
+            z-index: -1;
+            top:-25%;
+            left: 0;
+        }
+}
+
+@mixin icnon_for_circle {
+    svg {
         position: absolute;
-        border-radius: 100%;
-        z-index: -1;
-        top:-25%;
-        left: 0;
+        right: 34%;
+        top: 11%;                
+    }   
+}
+
+@mixin bottom_line {
+    &:after {
+        content: "";
+        display: block;
+        background-color: $main-color;
+        width: 60px;
+        height: 2px;
     }
 }
