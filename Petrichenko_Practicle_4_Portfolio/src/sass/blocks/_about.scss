@@ -7,7 +7,7 @@
     }
     &__descr{
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: minmax(125px,auto) / auto;
         padding-top: 6px;
     }
     &__image img{
@@ -26,7 +26,9 @@
 
     }
     &__text {
-        margin-top: 24px;
+        font-size: 14px;
+        margin-top: 20px;
+        line-height: 21px;
     }
     &__skill{
         display: grid;
@@ -36,7 +38,8 @@
         margin-top: 40px;
         &-item{
             display:grid;
-            grid-template-columns: 60px 260px;
+            grid-template-columns: 40px 200px;
+            column-gap: 20px;
         }
         &-descr{
             width: 200px;
@@ -47,8 +50,8 @@
             font-size: 12px;
             line-height: 18px;
         }
-        &-icon {            
-            width: 60px;
+        &-icon {   
+            padding: 15px 0 0 45px;
             @include before_circle;
             &:before {
                 top: 0;
