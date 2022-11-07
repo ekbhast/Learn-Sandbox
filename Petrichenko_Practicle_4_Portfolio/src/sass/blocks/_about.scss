@@ -15,14 +15,13 @@
     }
 
     &__title{
-        position: relative;
-        padding-left: 10px;
-        z-index: 2;
         @include before_circle;
     }
     &__subtitle {
-        margin-top: 6px;
         @include bottom_line;
+        &:after {
+            margin: 6px 0 0 0;
+        }
 
     }
     &__text {
@@ -51,12 +50,11 @@
             line-height: 18px;
         }
         &-icon {   
-            padding: 15px 0 0 45px;
             @include before_circle;
             &:before {
                 top: 0;
             }
-            @include  icnon_for_circle;      
+            @include  icon_for_circle;      
         }
     }
 }

@@ -1,0 +1,89 @@
+.resume {
+    padding-bottom: 126px;
+    &__title {
+        @include before_circle;
+        @include before_circle_center;
+       
+    }
+    &__subtitle{
+        text-align: center;
+        @include bottom_line;
+    }
+    &__wrapper {
+        display: grid;
+        padding: 60px 65px 0 65px;
+        grid-template-columns: repeat(2, 425px);
+        column-gap: 135px;
+    }
+    &__column {
+        &-title{
+            @include before_circle;
+            &:before {
+                width: 15px;
+                height: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -7px;
+            }
+            padding-left: 35px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            li {
+                position: relative;
+                &:after {
+                    content:"";
+                    width: 1px;
+                    height: calc(100% + 16px);
+                    position: absolute;
+                    top: -16px;
+                    left: 0;
+                    background-color: #000;
+                }
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        &:before {
+            content: "";
+            height: 1px;
+            width: 45px;
+            position: absolute;
+            background-color: #000;
+            top: 63px;
+
+        }
+        &-head{
+            position: relative;
+            padding: 45px 0 0 100px;
+            h4 {
+                margin-bottom: 0;
+            }
+        }
+        &-body{
+            padding-left: 43px;
+            margin-top: 12px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        &-icon {
+            @include before_circle;
+            position: absolute;
+            top:45px;
+            left: 45px;
+            svg {
+                position: absolute;
+                left: 17px;
+                top: 14px;                
+            }  
+        }
+        &-location {
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: 5px;
+        }
+    }
+}
