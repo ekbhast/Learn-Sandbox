@@ -20,4 +20,14 @@
     &_fz48 {
         font-size: 48px;
     }
+    &-section-title{
+        text-align: center;
+        @include before_circle;
+        @include before_circle_center;
+    }
+    &-section-subtitle{
+        text-align: center;
+        margin-bottom: 0;
+        @include bottom_line;
+    }
 }
