@@ -17,11 +17,27 @@
     .container {
         max-width: 540px;
     }
+    .title {
+        &_fz48 {
+            font-size: 28px;
+        }
+    }
+    .promo {
+        &__title{
+            line-height: 39px;
+            width: 300px;
+        }
+    }
 }
 
 @media (max-width: 576px) {
     .container {
         max-width: 100%;
         padding: 0 10px;
+    }
+    .title {
+        &_fz48 {
+            font-size: 26px;
+        }
     }
 }
