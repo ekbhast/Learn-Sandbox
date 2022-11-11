@@ -35,6 +35,18 @@
             column-gap: 50px;
         }
     }
+
+    .skills {
+        &__technology {
+            grid-template-columns: repeat(3,270px);
+            justify-content: center;
+        }
+
+        &__progress {
+            grid-template-columns: repeat(2,350px);
+            justify-content: center;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -67,6 +79,15 @@
         &__wrapper {
             grid-template-columns: 1fr;
             row-gap: 50px;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .skills {
+        &__technology {
+            grid-template-columns: repeat(2,270px);
+            justify-content: center;
         }
     }
 }
@@ -106,6 +127,17 @@
             }
         }
 
+    }
+    .skills {
+        &__technology {
+            grid-template-columns: repeat(2,270px);
+            justify-content: center;
+        }
+
+        &__progress {
+            grid-template-columns: repeat(1,350px);
+            justify-content: center;
+        }
     }
 }
 
@@ -152,6 +184,32 @@
         }
         &__text {
             width: 100%;
+        }
+    }
+
+    .skills {
+        &__technology {
+            grid-template-columns: repeat(1,270px);
+            justify-content: center;
+        }
+
+        &__progress {
+            grid-template-columns: repeat(1,300px);
+            justify-content: center;
+            .skills {
+                &__technology {
+                    grid-template-columns: repeat(2,270px);
+                    justify-content: center;
+                }
+        
+                &__progress {
+                    grid-template-columns: repeat(1,300px);
+                    justify-content: center;
+                    &-bar-basic {
+                        width: 300px;
+                    }
+                }
+            }
         }
     }
     

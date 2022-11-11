@@ -2,8 +2,10 @@
     padding-bottom: 120px;
     &__technology{
         display: grid;
+        padding: 0 10px;
         grid-template-columns: repeat(4, 270px);
         grid-template-rows: minmax(270px, auto);
+        grid-auto-rows: minmax(270px, auto);
         gap: 13px 13px;
         padding-top: 60px;
     }
