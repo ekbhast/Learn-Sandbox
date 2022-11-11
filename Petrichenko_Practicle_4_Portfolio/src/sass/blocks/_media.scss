@@ -187,6 +187,12 @@
         }
     }
 
+    .resume {
+        &__wrapper {
+            padding: 40px 15px 0 15px;
+        }
+    }
+
     .skills {
         &__technology {
             grid-template-columns: repeat(1,270px);
